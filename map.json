@@ -9,7 +9,7 @@
   },
   { 
     "type":"script",
-    "file":"./static/js/zepto.js"
+    "file":"./static/js/zepto.min.js"
   },
   { 
     "type":"link",
