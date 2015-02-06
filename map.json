@@ -1,0 +1,27 @@
+[
+  { 
+    "type":"script",
+    "file":"./static/js/highlight.pack.js"
+  },
+  { 
+    "type":"script",
+    "file":"./static/js/marked.js"
+  },
+  { 
+    "type":"script",
+    "file":"./static/js/zepto.js"
+  },
+  { 
+    "type":"link",
+    "file":"./static/css/highlight/github.css"
+  },
+  { 
+    "type":"link",
+    "file":"./static/css/main.css"
+  },
+  { 
+    "type":"link",
+    "file":"./static/css/github-markdown.css"
+  }
+
+]

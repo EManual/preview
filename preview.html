@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Preview</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./static/js/highlight.pack.js"></script>
+    <script src="./static/js/marked.js"></script>
+    <script src="./static/js/zepto.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./static/css/highlight/github.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/github-markdown.css">
+
+
+</head>
+
+<body style="margin: 10px;">
+
+    <div class="markdown-body" id="content"></div>
+
+
+    <script>
+    $(document).ready(function() {
+        var get_article_path = function() {
+            var str = location.search;
+            strs = str.replace('?', '').split('&')
+            for (var i = 0; i < strs.length; i++) {
+                if (strs[i].indexOf('path') != -1) {
+                    return strs[i].split('=')[1];
+                }
+            }
+            return null;
+        }
+        var article_path = get_article_path()
+
+        if (article_path != null) {
+            $.get(article_path, function(result) {
+                marked.setOptions({
+                    highlight: function(code) {
+                        return hljs.highlightAuto(code).value;
+                    }
+                });
+                $("#content").html(marked(result));
+                // hljs.initHighlightingOnLoad();
+            });
+        } else {
+            $("#content").html(marked('No Content'));
+        }
+    });
+    </script>
+
+</body>
+
+</html>
