@@ -5,7 +5,7 @@
   },
   { 
     "type":"script",
-    "file":"./static/js/marked.js"
+    "file":"./static/js/marked.min.js"
   },
   { 
     "type":"script",
