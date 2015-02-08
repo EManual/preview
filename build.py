@@ -20,9 +20,9 @@ with codecs.open('preview.html',encoding='utf-8') as f:
         for x in res :
             if x['type'] in line and x['file'] in line:
                 if x['type'] in 'script':
-                    line ='<script type="text/javascript">' + read(x['file']) + '</script>'
+                    line ='<script type="text/javascript"> \n' + read(x['file']) + '\n</script>' + '\n'
                 else:
-                    line = '<style type="text/css">' + read(x['file']) + '</style>'
+                    line = '<style type="text/css">\n' + read(x['file']) + '\n</style>' + '\n'
                 break
         result += line
 
